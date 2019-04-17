@@ -60,11 +60,11 @@ class CatalogController < ApplicationController
     #
     config.default_document_solr_params = {
       :qt=>"standard", 
-      :q=>"{!term f=ark_ssi v=$ark_ssi}",
+      :q=>"{!term f=ursus_id_ssi v=$ursus_id_ssi}",
       :fq=>"{!terms f=has_model_ssim v=Work,Collection}"
     }
     config.document_solr_path = 'select'
-    config.document_unique_id_param = 'ark_ssi'
+    config.document_unique_id_param = 'ursus_id_ssi'
 
     # solr field configuration for search results/index views
     # config.index.title_field = 'title_display'

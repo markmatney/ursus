@@ -11,7 +11,7 @@ RSpec.feature "View a Work", js: true do
     allow_any_instance_of(IiifService).to receive(:src).and_return('/uv/uv.html#?manifest=/manifest.json')
   end
 
-  let(:id) { '123' }
+  let(:id) { '123-456' }
 
   let(:work_attributes) do
     {
