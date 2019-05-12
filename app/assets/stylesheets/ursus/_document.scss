@@ -46,12 +46,18 @@
     }
     dl.document-metadata {
       margin-left: 0;
+      dd {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
-    dd {
+
+    dd.document-metadata {
       margin-right: 15px;
     }
     .document-thumbnail {
       text-align: center;
+      padding-bottom: 1rem;
     }
   }
 }
