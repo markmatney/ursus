@@ -1,16 +1,121 @@
-.document-thumbnail {
-  margin-top: -1.75em!important;
-  padding: 1px;
-}
+@import 'colors';
 
-@media screen and (max-width: 991px) {
-  .document-thumbnail {
-    margin-top: -2.5em!important;
+#documents {
+  .document-title-heading {
+    font-weight: 400;
+    font-size: 1rem;
+    color: $ucla-darker-blue;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
-}
+  .document-metadata {
+    flex-direction: column;
+    background-color: yellow;
+  }
+  dl {
+    padding-left: 0px;
+  }
+  dl.document-metadata {
+    margin-left: 1em;
+    dt {
+      font-weight: bold;
+      color: $ucla-darkest-blue;
+      font-size: 1rem;
+    }
+  }
 
-@media screen and (max-width: 767px) {
+  .document-thumbnail img {
+    max-width: 150px;
+    vertical-align: top;
+  }
+
+  .div-wrap {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+  }
+
+  .metadata-thumbnail-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellowgreen;
+  }
+
   .document-thumbnail {
-    margin-top: -.5em!important;
+    background-color: blue;
+  }
+
+  // dt.blacklight-description_tesim,
+  // dt.blacklight-date_created_tesim
+
+  dt {
+    flex: 0 0 28%;
+    max-width: 28%;
+    // padding-left: 0;
+    // padding-right: 0;
+  }
+
+  // dd.blacklight-description_tesim,
+  // dd.blacklight-date_created_tesim
+
+  dd {
+    flex: 0 0 72%;
+    max-width: 72%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .description,
+  .description-full {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 767px) {
+    dd.blacklight-description_tesim {
+      background-color: red;
+    }
+    dt.blacklight-description_tesim {
+      background-color: aqua;
+    }
+    dd.blacklight-date_created_tesim {
+      background-color: pink;
+    }
+    dt.blacklight-date_created_tesim {
+      background-color: peru;
+    }
+  }
+
+  @media screen and (max-width: 766px) {
+    .metadata-thumbnail-wrapper {
+      flex-direction: column-reverse;
+    }
+
+    dl.document-metadata {
+      margin-left: 0;
+    }
+    .dl-invert dt {
+      text-align: right;
+    }
+    .div-wrap {
+      display: flex;
+      width: 100%;
+    }
+
+    dd.blacklight-description_tesim,
+    dd.blacklight-date_created_tesim {
+      margin-right: 15px;
+    }
+    dt.blacklight-description_tesim,
+    dt.blacklight-date_created_tesim {
+      flex: 0 0 28%;
+      max-width: 28%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .description,
+    .description-full {
+      width: 100%;
+    }
   }
 }
