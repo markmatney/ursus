@@ -1,0 +1,16 @@
+.search-area {
+  margin-top: 20px;
+  display: flex;
+  background-color: $ucla-lightest-blue;
+  border-top: 6px solid $ucla-lightest-blue;
+  .btn {
+    background-color: $white;
+  }
+  .navbar-search {
+    z-index: 1;  
+    .search-field {
+      // This prevents the widget from being squished so the text overflows
+      min-width: 7em;
+    }  
+  }
+}

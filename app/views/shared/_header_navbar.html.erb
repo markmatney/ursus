@@ -12,19 +12,11 @@
     </button>
 
     <div class='collapse navbar-collapse justify-content-md-end' id='user-util-collapse'>
-    <ul class='navbar-nav nav ml-auto'>
-      <li class='nav-item'><a href='/about' class='nav-link'>About</a></li>
-      <li class='nav-item'><a href='mailto:dlp@library.ucla.edu' class='nav-link feedback-link'>Give us feedback<br><span class='feedback-email'>at dlp@library.ucla.edu</span></a></li>
-    </ul>
-  </div>
+      <ul class='navbar-nav nav ml-auto'>
+        <li class='nav-item'><a href='/about' class='nav-link'>About</a></li>
+        <li class='nav-item'><a href='mailto:dlp@library.ucla.edu' class='nav-link feedback-link'>Give us feedback<br><span class='feedback-email'>at dlp@library.ucla.edu</span></a></li>
+      </ul>
+    </div>
 
   </div>
 </nav>
-
-<% unless controller.controller_name == 'catalog' && controller.action_name == 'show' %>
-  <div class='navbar-search navbar navbar-light bg-faded' role='navigation'>
-    <div class='container-fluid'>
-      <%= render_search_bar  %>
-    </div>
-  </div>
-<% end %>

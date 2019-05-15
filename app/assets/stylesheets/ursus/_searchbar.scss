@@ -8,7 +8,6 @@
   .navbar-search {
     padding-left: 0;
   }
-
   .navbar-search > .container-fluid {
     width: $container-padding;
   }
@@ -43,3 +42,43 @@
   padding-top: 6px;
   color: $ucla-blue;
 }
+
+.search-ucla {
+  margin-left: -15px;
+  margin-top: -15px;
+  max-width: 100%;
+}
+
+.search-breadcrumbs {
+  margin-left: 10px;
+  margin-top: -9px;
+}
+
+#search_field {
+  background-color: $ucla-blue;
+  color: $white;
+}
+
+.btn-group {
+  .constraints-label {
+    background-color: $ucla-blue;
+    color: $white;
+  }
+
+  .constraint.filter.filter-location_sim {
+    background-color: $ucla-blue;
+    color: $white;
+  }
+
+  .filter-name {
+  background-color: $ucla-blue;
+    color: $white;
+  }
+
+  .filter-value {
+  background-color: $ucla-blue;
+    color: $white;
+  }
+}
+
+
