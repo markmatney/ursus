@@ -31,6 +31,10 @@ RSpec.describe Ursus::SubjectMetadataPresenter do
       it 'returns the Geographic Coordinates Key' do
         expect(config['geographic_coordinates_ssim'].to_s).to eq('Geographic Coordinates')
       end
+
+      it 'returns the Tags Key' do
+        expect(config['tags_ssim'].to_s).to eq('Tags')
+      end
     end
   end
 end
