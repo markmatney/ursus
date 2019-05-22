@@ -21,7 +21,8 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       year_isim: [1947],
       language_sim: ['No linguistic content'],
       location_sim: ['Echo Park'],
-      member_of_collections_ssim: ['Connell']
+      member_of_collections_ssim: ['Connell'],
+      tags_ssim: ['tag1', 'tag2']
     }
   end
 
@@ -36,7 +37,8 @@ RSpec.feature 'The facet sidebar', :clean, js: false do
       'Location',
       'Date',
       'Language',
-      'Collection'
+      'Collection',
+      'Tags'
     )
   end
 

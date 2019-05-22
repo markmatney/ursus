@@ -17,7 +17,8 @@ RSpec.feature 'Search the catalog' do
       has_model_ssim: ['Work'],
       title_tesim: ['Orange Carrot'],
       photographer_tesim: ['Bittersweet Tangerine'],
-      description_tesim: ['Long description Long description Long description Long description Long description Long description']
+      description_tesim: ['Long description Long description Long description Long description Long description Long description'],
+      tags_ssim: ['oblong vegetable']
     }
   end
 
@@ -26,7 +27,8 @@ RSpec.feature 'Search the catalog' do
       id: '222',
       has_model_ssim: ['Work'],
       title_tesim: ['Yellow Banana'],
-      photographer_tesim: ['Buff Saffron']
+      photographer_tesim: ['Buff Saffron'],
+      tags_ssim: ['oblong fruit']
     }
   end
 
@@ -131,5 +133,23 @@ RSpec.feature 'Search the catalog' do
     fill_in 'q', with: 'carrot'
     click_on 'search'
     expect(page).to have_content('Read More')
+  end
+
+  scenario 'searches for tags must match exactly' do
+    visit root_path
+    fill_in 'q', with: 'oblong'
+    click_on 'search'
+    within '#documents' do
+      expect(page).to_not have_link('Orange Carrot')
+      expect(page).to_not have_link('Yellow Banana')
+    end
+
+    visit root_path
+    fill_in 'q', with: '"oblong fruit"'
+    click_on 'search'
+    within '#documents' do
+      expect(page).to_not have_link('Orange Carrot')
+      expect(page).to     have_link('Yellow Banana')
+    end
   end
 end
