@@ -149,6 +149,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_facet: ::Solrizer.solr_name('photographer', :facetable)
     config.add_show_field ::Solrizer.solr_name('services_contact', :displayable), label: 'Rights services contact'
     config.add_show_field 'ark_ssi', label: 'ARK'
+    config.add_show_field ::Solrizer.solr_name('tags', :symbol)
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
