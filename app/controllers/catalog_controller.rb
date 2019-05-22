@@ -82,6 +82,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'year_isim', limit: 5, range: true
     config.add_facet_field ::Solrizer.solr_name('language', :facetable), limit: 5
     config.add_facet_field 'member_of_collections_ssim', limit: 5, label: 'Collection'
+    config.add_facet_field ::Solrizer.solr_name('tags', :symbol), limit: 5
 
     # config.add_facet_field ::Solrizer.solr_name('human_readable_type', :facetable), label: 'Type', limit: 5
     # config.add_facet_field ::Solrizer.solr_name('creator', :facetable), limit: 5
@@ -149,7 +150,7 @@ class CatalogController < ApplicationController
     config.add_show_field ::Solrizer.solr_name('photographer', :stored_searchable), label: 'Photographer', link_to_facet: ::Solrizer.solr_name('photographer', :facetable)
     config.add_show_field ::Solrizer.solr_name('services_contact', :displayable), label: 'Rights services contact'
     config.add_show_field 'ark_ssi', label: 'ARK'
-    config.add_show_field ::Solrizer.solr_name('tags', :symbol)
+    config.add_show_field ::Solrizer.solr_name('tags', :symbol), link_to_facet: ::Solrizer.solr_name('tags', :symbol)
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
