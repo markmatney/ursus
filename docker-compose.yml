@@ -6,7 +6,6 @@ services:
     hostname: ursus
     depends_on:
       - db
-      - solr
       - dockerhost
     env_file:
       - ./dotenv.sample
@@ -14,8 +13,8 @@ services:
       DATABASE_HOST: db
       IIIF_URL: https://californica-test.library.ucla.edu/concern/works
       THUMBNAIL_BASE_URL: http://californica-test.library.ucla.edu
-      SOLR_URL: http://solr:8983/solr/calursus
-      SOLR_TEST_URL: http://solr_test:8983/solr/calursus
+      SOLR_URL: "$URSUS_SOLR_URL"
+      SOLR_TEST_URL: "$URSUS_SOLR_TEST_URL"
     ports:
       - "3003:3000"
     volumes:
@@ -33,16 +32,6 @@ services:
       - 3306:3306
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-
-  solr:
-    image: uclalibrary/solr-ursus
-    ports:
-      - 8983:8983
-
-  solr_test:
-    image: uclalibrary/solr-ursus
-    ports:
-      - 8985:8983
   dockerhost:
     image: qoomon/docker-host
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
